@@ -1,0 +1,79 @@
+---
+import Button from './Button.astro';
+---
+
+<section class="hero">
+  <div class="container hero__content">
+    <h1>Kozijnen op maat,<br /><span>gemaakt met vakmanschap.</span></h1>
+    <p class="hero__text">
+      Timmerfabriek Sint Nyk maakt en monteert maatwerk houten kozijnen die perfect aansluiten op uw woning. Met jaren vakmanschap leveren we kozijnen die lang meegaan.
+    </p>
+    <div class="hero__buttons">
+      <Button href="/contact">Offerte aanvragen</Button>
+      <Button href="/contact" variant="white">Contact opnemen</Button>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    position: relative;
+    background-image: url('/images/hero-image.png');
+    background-size: cover;
+    background-position: center;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3));
+  }
+
+  .hero__content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hero h1 {
+    color: var(--white);
+    margin-bottom: var(--spacing-24);
+  }
+
+  .hero h1 span {
+    font-weight: var(--font-regular);
+  }
+
+  .hero__text {
+    color: var(--white);
+    max-width: 768px;
+    margin-bottom: var(--spacing-48);
+  }
+
+  .hero__buttons {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-16);
+    width: 100%;
+  }
+
+  .hero__buttons :global(.button) {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Desktop */
+  @media (min-width: 1024px) {
+    .hero__buttons {
+      flex-direction: row;
+      width: auto;
+    }
+
+    .hero__buttons :global(.button) {
+      width: auto;
+    }
+  }
+</style>

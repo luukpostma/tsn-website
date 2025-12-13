@@ -1,0 +1,137 @@
+---
+import Button from './Button.astro';
+
+const services = [
+  {
+    icon: '/icons/Kozijn svg.svg',
+    title: 'Kozijnen',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas elit arcu, dictum.'
+  },
+  {
+    icon: '/icons/Beglazing svg.svg',
+    title: 'Beglazing',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas elit arcu, dictum.'
+  },
+  {
+    icon: '/icons/Montage svg.svg',
+    title: 'Montage',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas elit arcu, dictum.'
+  }
+];
+---
+
+<section class="services">
+  <div class="container">
+    <div class="services__header">
+      <div class="services__intro">
+        <p class="services__label">
+          <img src="/icons/line.svg" alt="" />
+          Onze diensten
+        </p>
+        <h3>Houten timmerwerk,<br /><span>volgens uw wensen.</span></h3>
+        <p class="services__text">
+          Timmerfabriek Sint Nyk levert houten ramen, deuren en schuifpuien met professionele montage. Van klassiek tot modern, elk project wordt nauwkeurig afgestemd op uw woning.
+        </p>
+      </div>
+      <div class="services__cta">
+        <Button href="/diensten" variant="dark-blue">Alle diensten</Button>
+      </div>
+    </div>
+
+    <div class="services__grid">
+      {services.map((service) => (
+        <div class="services__card">
+          <img src={service.icon} alt="" class="services__icon" />
+          <h5>{service.title}</h5>
+          <p>{service.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .services__header {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-32);
+    margin-bottom: var(--spacing-48);
+  }
+
+  .services__label {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-12);
+    font-weight: var(--font-semibold);
+    margin-bottom: var(--spacing-16);
+  }
+
+  .services__label img {
+    width: 24px;
+  }
+
+  .services__intro h3 {
+    margin-bottom: var(--spacing-24);
+  }
+
+  .services__intro h3 span {
+    font-weight: var(--font-regular);
+  }
+
+  .services__text {
+    max-width: 768px;
+  }
+
+  .services__cta {
+    display: flex;
+  }
+
+  .services__cta :global(.button) {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .services__grid {
+    display: grid;
+    gap: var(--spacing-32);
+  }
+
+  .services__card {
+    border: 1px solid var(--gray-300);
+    padding: var(--spacing-24);
+    transition: box-shadow 0.2s ease;
+  }
+
+  .services__card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  .services__icon {
+    width: 80px;
+    height: 80px;
+    margin-bottom: var(--spacing-48);
+  }
+
+  .services__card h5 {
+    margin-bottom: var(--spacing-12);
+  }
+
+  /* Desktop */
+  @media (min-width: 1024px) {
+    .services__header {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: var(--spacing-64);
+    }
+
+    .services__cta :global(.button) {
+      width: auto;
+    }
+
+    .services__grid {
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--spacing-48);
+    }
+  }
+</style>

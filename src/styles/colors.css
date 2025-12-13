@@ -1,0 +1,54 @@
+/*
+ * Color System - CSS Custom Properties
+ * Timmerfabriek Sint Nyk
+ */
+
+:root {
+  /* Green */
+  --green-100: #D0FCE7;
+  --green-200: #A1F9CE;
+  --green-300: #72F6B6;
+  --green-400: #43F39D;
+  --green-500: #14F085;
+  --green-600: #10C06A;
+  --green-700: #0C9050;
+  --green-800: #086035;
+  --green-900: #04301B;
+
+  /* Blue */
+  --blue-100: #CFDDF4;
+  --blue-200: #9FBBE9;
+  --blue-300: #6F99DF;
+  --blue-400: #3F77D4;
+  --blue-500: #0F55C9;
+  --blue-600: #0C44A1;
+  --blue-700: #093379;
+  --blue-800: #062250;
+  --blue-900: #031128;
+
+  /* Dark Blue */
+  --dark-blue-100: #CDD6EB;
+  --dark-blue-200: #9BADD7;
+  --dark-blue-300: #6985C4;
+  --dark-blue-400: #375CB0;
+  --dark-blue-500: #05339C;
+  --dark-blue-600: #04297D;
+  --dark-blue-700: #031F5E;
+  --dark-blue-800: #02143E;
+  --dark-blue-900: #010A1F;
+
+  /* Gray */
+  --gray-100: #FFFFFF;
+  --gray-200: #F2F2F2;
+  --gray-300: #D9D9D9;
+  --gray-400: #B3B3B3;
+  --gray-500: #8C8C8C;
+  --gray-600: #666666;
+  --gray-700: #404040;
+  --gray-800: #262626;
+  --gray-900: #1C1C1C;
+
+  /* Neutral */
+  --white: #FFFFFF;
+  --black: #000000;
+}

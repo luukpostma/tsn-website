@@ -1,0 +1,174 @@
+---
+import Button from './Button.astro';
+---
+
+<header class="navbar">
+  <nav class="container-nav navbar__inner">
+    <a href="/" class="navbar__logo">
+      <img src="/icons/logo-white.svg" alt="Timmerfabriek Sint Nyk" />
+    </a>
+
+    <!-- Desktop Navigation -->
+    <div class="navbar__nav">
+      <ul class="navbar__links">
+        <li><a href="/over-ons">Over ons</a></li>
+        <li><a href="/diensten">Diensten</a></li>
+        <li><a href="/projecten">Projecten</a></li>
+      </ul>
+      <div class="navbar__cta">
+        <Button href="/contact">Contact</Button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu Button -->
+    <button class="navbar__menu-btn" aria-label="Open menu" aria-expanded="false">
+      <img src="/icons/menu-closed.svg" alt="" class="navbar__menu-icon navbar__menu-icon--closed" />
+      <img src="/icons/menu-open.svg" alt="" class="navbar__menu-icon navbar__menu-icon--open" />
+    </button>
+  </nav>
+
+  <!-- Mobile Navigation -->
+  <div class="navbar__mobile">
+    <ul class="navbar__mobile-links">
+      <li><a href="/over-ons">Over ons</a></li>
+      <li><a href="/diensten">Diensten</a></li>
+      <li><a href="/projecten">Projecten</a></li>
+    </ul>
+    <div class="navbar__mobile-cta">
+      <Button href="/contact">Contact</Button>
+    </div>
+  </div>
+</header>
+
+<style>
+  .navbar {
+    background-color: var(--dark-blue-500);
+    position: relative;
+  }
+
+  .navbar__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .navbar__logo img {
+    height: 40px;
+    width: auto;
+  }
+
+  /* Desktop Navigation */
+  .navbar__nav {
+    display: none;
+    align-items: center;
+    gap: var(--spacing-40);
+  }
+
+  .navbar__links {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-40);
+  }
+
+  .navbar__links a {
+    color: var(--white);
+    font-size: 1rem;
+    font-weight: var(--font-semibold);
+  }
+
+  .navbar__links a:hover {
+    opacity: 0.8;
+  }
+
+  /* Mobile Menu Button */
+  .navbar__menu-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-8);
+  }
+
+  .navbar__menu-icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .navbar__menu-icon--open {
+    display: none;
+  }
+
+  .navbar[data-open="true"] .navbar__menu-icon--closed {
+    display: none;
+  }
+
+  .navbar[data-open="true"] .navbar__menu-icon--open {
+    display: block;
+  }
+
+  /* Mobile Navigation */
+  .navbar__mobile {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    padding: var(--spacing-48) var(--spacing-16);
+    background-color: var(--dark-blue-500);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 100;
+  }
+
+  .navbar[data-open="true"] .navbar__mobile {
+    display: flex;
+  }
+
+  .navbar__mobile-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-32);
+    margin-bottom: var(--spacing-48);
+  }
+
+  .navbar__mobile-links a {
+    color: var(--white);
+    font-size: 1rem;
+    font-weight: var(--font-semibold);
+  }
+
+  .navbar__mobile-cta {
+    width: 100%;
+  }
+
+  .navbar__mobile-cta :global(.button) {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Desktop */
+  @media (min-width: 1024px) {
+    .navbar__nav {
+      display: flex;
+    }
+
+    .navbar__menu-btn {
+      display: none;
+    }
+
+    .navbar__mobile {
+      display: none !important;
+    }
+  }
+</style>
+
+<script>
+  const navbar = document.querySelector('.navbar');
+  const menuBtn = document.querySelector('.navbar__menu-btn');
+
+  menuBtn?.addEventListener('click', () => {
+    const isOpen = navbar?.getAttribute('data-open') === 'true';
+    navbar?.setAttribute('data-open', String(!isOpen));
+    menuBtn?.setAttribute('aria-expanded', String(!isOpen));
+  });
+</script>

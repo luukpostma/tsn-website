@@ -1,0 +1,67 @@
+---
+interface Props {
+  href: string;
+  variant?: 'green' | 'dark-blue' | 'white';
+}
+
+const { href, variant = 'green' } = Astro.props;
+---
+
+<a href={href} class:list={['button', `button--${variant}`]}>
+  <slot />
+  <img src="/icons/arrow.svg" alt="" class="button__icon" />
+</a>
+
+<style>
+  .button {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-8);
+    padding: var(--spacing-12) var(--spacing-24);
+    font-size: 1rem;
+    font-weight: var(--font-semibold);
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .button__icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  /* Green variant */
+  .button--green {
+    background-color: var(--green-500);
+    color: var(--black);
+  }
+
+  .button--green:hover {
+    background-color: var(--green-600);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  /* Dark blue variant */
+  .button--dark-blue {
+    background-color: var(--dark-blue-500);
+    color: var(--white);
+  }
+
+  .button--dark-blue:hover {
+    background-color: var(--dark-blue-600);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  .button--dark-blue .button__icon {
+    filter: brightness(0) invert(1);
+  }
+
+  /* White variant */
+  .button--white {
+    background-color: var(--white);
+    color: var(--black);
+  }
+
+  .button--white:hover {
+    background-color: var(--gray-200);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+</style>

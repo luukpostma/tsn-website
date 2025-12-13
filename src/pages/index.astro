@@ -1,14 +1,10 @@
 ---
-
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import Services from '../components/Services.astro';
 ---
 
-<html lang="nl">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
-		<title>Timmerfabriek Sint Nyk</title>
-	</head>
-	<body>
-		<h1>Welkom</h1>
-	</body>
-</html>
+<Layout title="Home">
+  <Hero />
+  <Services />
+</Layout>
