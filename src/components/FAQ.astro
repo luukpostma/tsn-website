@@ -1,0 +1,149 @@
+---
+const faqs = [
+  {
+    question: "Wat zijn de levertijden?",
+    answer: "Onze standaard levertijd bedraagt 4 tot 6 weken na akkoord van de offerte. Dit is afhankelijk van de complexiteit van uw project en de beschikbaarheid van materialen. Voor spoedorders nemen we graag contact met u op om mogelijkheden te bespreken."
+  },
+  {
+    question: "Welke houtsoorten gebruiken jullie?",
+    answer: "Wij werken met hoogwaardige houtsoorten zoals eiken, meranti en accoya. Elk houtsoort heeft zijn eigen eigenschappen en voordelen. We adviseren u graag over de beste keuze voor uw situatie."
+  },
+  {
+    question: "Verzorgen jullie ook de montage?",
+    answer: "Ja, wij verzorgen de complete montage van al onze producten. Onze ervaren monteurs zorgen voor een professionele plaatsing van uw kozijnen, ramen en deuren."
+  },
+  {
+    question: "Wat kost een kozijn op maat?",
+    answer: "De prijs van een kozijn op maat is afhankelijk van verschillende factoren zoals afmetingen, houtsoort en afwerking. Neem contact met ons op voor een vrijblijvende offerte."
+  },
+];
+---
+
+<section class="faq">
+  <div class="container">
+    <div class="faq__inner">
+      <div class="faq__intro">
+        <p class="faq__label">
+          <img src="/icons/line.svg" alt="" />
+          Vragen
+        </p>
+        <h3>Heeft u een vraag?<br /><span>Hier beantwoorden we ze.</span></h3>
+        <p class="faq__text">
+          Veel gestelde vragen over onze houten projecten, montage en diensten. Vind snel antwoorden op uw vragen over Timmerfabriek Sint Nyk. Heeft u nog vragen? Neem contact met ons op.
+        </p>
+      </div>
+
+      <div class="faq__accordion">
+        {faqs.map((faq, index) => (
+          <details class="faq__item" name="faq">
+            <summary class="faq__question">
+              <span>{faq.question}</span>
+              <img src="/icons/plus-icon.svg" alt="" class="faq__icon faq__icon--plus" />
+              <img src="/icons/minus-icon.svg" alt="" class="faq__icon faq__icon--minus" />
+            </summary>
+            <p class="faq__answer">{faq.answer}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .faq__inner {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-48);
+  }
+
+  .faq__label {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-12);
+    font-weight: var(--font-semibold);
+    margin-bottom: var(--spacing-16);
+  }
+
+  .faq__label img {
+    width: 24px;
+  }
+
+  .faq__intro h3 {
+    margin-bottom: var(--spacing-24);
+  }
+
+  .faq__intro h3 span {
+    font-weight: var(--font-regular);
+  }
+
+  .faq__text {
+    max-width: 600px;
+  }
+
+  .faq__accordion {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .faq__item {
+    border-bottom: 1px solid var(--gray-300);
+  }
+
+  .faq__question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-24) 0;
+    cursor: pointer;
+    list-style: none;
+  }
+
+  .faq__question::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq__question span {
+    font-weight: var(--font-semibold);
+    font-size: 1.125rem;
+  }
+
+  .faq__icon {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+  }
+
+  .faq__icon--minus {
+    display: none;
+  }
+
+  .faq__item[open] .faq__icon--plus {
+    display: none;
+  }
+
+  .faq__item[open] .faq__icon--minus {
+    display: block;
+  }
+
+  .faq__answer {
+    padding-bottom: var(--spacing-24);
+    font-size: 1rem;
+    color: var(--gray-600);
+  }
+
+  /* Desktop */
+  @media (min-width: 1024px) {
+    .faq__inner {
+      flex-direction: row;
+      gap: var(--spacing-64);
+    }
+
+    .faq__intro {
+      flex: 1;
+    }
+
+    .faq__accordion {
+      flex: 1;
+    }
+  }
+</style>

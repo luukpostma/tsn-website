@@ -1,9 +1,40 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Services from '../components/Services.astro';
+import Werkwijze from '../components/Werkwijze.astro';
+import FAQ from '../components/FAQ.astro';
+import CTA from '../components/CTA.astro';
 ---
 
 <Layout title="Diensten">
-  <section class="container">
-    <h1>Diensten</h1>
+  <section class="diensten-hero">
+    <div class="container">
+      <h1>Diensten</h1>
+      <p class="diensten-hero__description">
+        Van kozijnen tot complete montage: bij Timmerfabriek Sint Nyk regelen we alles voor u. Met vakmanschap en oog voor detail zorgen we dat uw woning precies krijgt wat nodig is.
+      </p>
+    </div>
   </section>
+
+  <Services showAll={true} buttonText="Offerte aanvragen" buttonHref="/contact" />
+
+  <Werkwijze />
+  <FAQ />
+  <CTA />
 </Layout>
+
+<style>
+  .diensten-hero {
+    background-color: var(--dark-blue-500);
+  }
+
+  .diensten-hero h1 {
+    color: var(--white);
+    margin-bottom: var(--spacing-24);
+  }
+
+  .diensten-hero__description {
+    color: var(--white);
+    max-width: 768px;
+  }
+</style>

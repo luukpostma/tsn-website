@@ -1,10 +1,28 @@
 ---
 import Button from './Button.astro';
 
-const services = [
+interface Props {
+  showAll?: boolean;
+  buttonText?: string;
+  buttonHref?: string;
+}
+
+const { showAll = false, buttonText = 'Alle diensten', buttonHref = '/diensten' } = Astro.props;
+
+const allServices = [
   {
     icon: '/icons/Kozijn svg.svg',
     title: 'Kozijnen',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas elit arcu, dictum.'
+  },
+  {
+    icon: '/icons/Raam svg.svg',
+    title: 'Ramen',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas elit arcu, dictum.'
+  },
+  {
+    icon: '/icons/Schuifpui svg.svg',
+    title: 'Schuifpuien',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas elit arcu, dictum.'
   },
   {
@@ -13,11 +31,18 @@ const services = [
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas elit arcu, dictum.'
   },
   {
+    icon: '/icons/Deur svg.svg',
+    title: 'Deuren',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas elit arcu, dictum.'
+  },
+  {
     icon: '/icons/Montage svg.svg',
     title: 'Montage',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas elit arcu, dictum.'
   }
 ];
+
+const services = showAll ? allServices : allServices.slice(0, 3);
 ---
 
 <section class="services">
@@ -34,7 +59,7 @@ const services = [
         </p>
       </div>
       <div class="services__cta">
-        <Button href="/diensten" variant="dark-blue">Alle diensten</Button>
+        <Button href={buttonHref} variant="dark-blue">{buttonText}</Button>
       </div>
     </div>
 

@@ -1,9 +1,115 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import CTA from '../components/CTA.astro';
 ---
 
 <Layout title="Over ons">
-  <section class="container">
-    <h1>Over ons</h1>
+  <section class="about-hero">
+    <div class="container">
+      <h1>Over ons</h1>
+      <p class="about-hero__description">
+        Timmerfabriek Sint Nyk maakt en monteert maatwerk houten kozijnen die perfect aansluiten op uw woning. Met jaren vakmanschap leveren we kozijnen die lang meegaan.
+      </p>
+    </div>
   </section>
+
+  <div class="about-image">
+    <div class="container">
+      <img src="/images/over-ons-image.webp" alt="Timmerfabriek Sint Nyk aan het werk" />
+    </div>
+  </div>
+
+  <article class="about-content">
+    <div class="container">
+      <div class="about-content__grid">
+        <div class="about-content__column">
+          <p>
+            Bij Timmerfabriek Sint Nyk draait alles om vakmanschap en kwaliteit. Al jarenlang maken wij houten kozijnen, ramen en deuren op maat voor particulieren en bedrijven in heel Nederland. Onze ervaren timmerlieden combineren traditionele ambachtelijke technieken met moderne productiemethoden.
+          </p>
+          <p>
+            Elk project begint met een persoonlijk gesprek. We luisteren naar uw wensen, bekijken de situatie ter plaatse en adviseren over de beste oplossing. Of het nu gaat om een nieuwbouwwoning, een monumentaal pand of een renovatieproject, wij leveren maatwerk dat perfect past.
+          </p>
+          <p>
+            Wij werken uitsluitend met duurzaam hout van hoge kwaliteit. Door onze zorgvuldige afwerking en behandeling gaan onze kozijnen tientallen jaren mee. We staan achter onze producten en bieden uitgebreide garantie op al ons werk.
+          </p>
+        </div>
+        <div class="about-content__column">
+          <p>
+            Ons team bestaat uit gedreven vakmensen die trots zijn op hun werk. Van ontwerp tot montage, alles wordt met de grootste zorg uitgevoerd. We investeren continu in de ontwikkeling van onze medewerkers en in moderne machines om de beste kwaliteit te kunnen blijven leveren.
+          </p>
+          <p>
+            Timmerfabriek Sint Nyk is gevestigd in Sint Nicolaasga, in het hart van Friesland. Vanuit onze werkplaats bedienen we klanten in de wijde omgeving. Dankzij onze centrale ligging kunnen we snel schakelen en zijn we altijd bereikbaar voor vragen of service.
+          </p>
+          <p>
+            Wij geloven in persoonlijk contact en een langdurige relatie met onze klanten. Veel opdrachtgevers komen bij ons terug voor nieuwe projecten of bevelen ons aan bij anderen. Die waardering is voor ons de mooiste beloning voor ons vakmanschap.
+          </p>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <CTA />
 </Layout>
+
+<style>
+  .about-hero {
+    background-color: var(--dark-blue-500);
+  }
+
+  .about-hero h1 {
+    color: var(--white);
+    margin-bottom: var(--spacing-24);
+  }
+
+  .about-hero__description {
+    color: var(--white);
+    max-width: 768px;
+  }
+
+  .about-image {
+    padding: var(--spacing-64) 0 var(--spacing-48) 0;
+  }
+
+  .about-image .container {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .about-image img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+  }
+
+  .about-content .container {
+    padding-top: 0;
+  }
+
+  .about-content__grid {
+    display: grid;
+    gap: var(--spacing-32);
+  }
+
+  .about-content__column {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-24);
+  }
+
+  /* Desktop */
+  @media (min-width: 1024px) {
+
+    .about-image {
+      padding: var(--spacing-96) 0 var(--spacing-48) 0
+    }
+
+    .about-image img {
+      height: 560px;
+    }
+
+    .about-content__grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--spacing-48);
+    }
+  }
+</style>

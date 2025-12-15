@@ -2,4 +2,5 @@
 <rect x="63" y="1" width="62" height="62" transform="rotate(90 63 1)" stroke="#1C1C1C" stroke-width="2"/>
 <rect x="15" y="1" width="62" height="14" transform="rotate(90 15 1)" stroke="#1C1C1C" stroke-width="2"/>
 <rect x="63" y="1" width="62" height="14" transform="rotate(90 63 1)" stroke="#1C1C1C" stroke-width="2"/>
+<rect x="43.5" y="28.5" width="7" height="1" transform="rotate(90 43.5 28.5)" stroke="#1C1C1C"/>
 </svg>

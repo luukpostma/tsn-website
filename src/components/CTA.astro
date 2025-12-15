@@ -1,0 +1,102 @@
+---
+import Button from './Button.astro';
+---
+
+<section class="cta">
+  <div class="container cta__inner">
+    <div class="cta__content">
+      <p class="cta__label">
+        <img src="/icons/line.svg" alt="" class="cta__line" />
+        Contact
+      </p>
+      <h2>Klaar voor uw kozijnen?<br /><span>Laten we starten.</span></h2>
+      <p class="cta__text">
+        Heb je vragen of wil je een offerte? Neem contact op via telefoonnummer, email of vul het formulier in. We helpen je graag verder.
+      </p>
+      <div class="cta__button">
+        <Button href="/contact">Contact opnemen</Button>
+      </div>
+    </div>
+    <div class="cta__image">
+      <img src="/images/cta-section.webp" alt="Timmerfabriek Sint Nyk aan het werk" />
+    </div>
+  </div>
+</section>
+
+<style>
+  .cta {
+    background-color: var(--dark-blue-500);
+  }
+
+  .cta__inner {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-48);
+  }
+
+  .cta__label {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-12);
+    font-weight: var(--font-semibold);
+    color: var(--white);
+    margin-bottom: var(--spacing-16);
+  }
+
+  .cta__line {
+    width: 24px;
+    filter: brightness(0) invert(1);
+  }
+
+  .cta h2 {
+    color: var(--white);
+    margin-bottom: var(--spacing-24);
+  }
+
+  .cta h2 span {
+    font-weight: var(--font-regular);
+  }
+
+  .cta__text {
+    color: var(--white);
+    opacity: 0.9;
+    max-width: 600px;
+    margin-bottom: var(--spacing-32);
+  }
+
+  .cta__button :global(.button) {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .cta__image img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+  }
+
+  /* Desktop */
+  @media (min-width: 1024px) {
+    .cta__inner {
+      flex-direction: row;
+      align-items: center;
+      gap: var(--spacing-64);
+    }
+
+    .cta__content {
+      flex: 1;
+    }
+
+    .cta__button :global(.button) {
+      width: auto;
+    }
+
+    .cta__image {
+      flex: 1;
+    }
+
+    .cta__image img {
+      height: 480px;
+    }
+  }
+</style>

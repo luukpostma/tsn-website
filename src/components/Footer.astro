@@ -1,0 +1,186 @@
+---
+const links = [
+  { label: "Home", href: "/" },
+  { label: "Over ons", href: "/over-ons" },
+  { label: "Diensten", href: "/diensten" },
+  { label: "Projecten", href: "/projecten" }
+];
+
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="footer">
+  <div class="footer__container">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <a href="/" class="footer__logo">
+          <img src="/icons/logo-white.svg" alt="Timmerfabriek Sint Nyk" />
+        </a>
+        <p class="footer__description">
+          Timmerfabriek Sint Nyk. Houten kozijnen, ramen en deuren op maat.
+        </p>
+      </div>
+
+      <div class="footer__links">
+        <p class="footer__title">Links</p>
+        <nav class="footer__nav">
+          {links.map((link) => (
+            <a href={link.href}>{link.label}</a>
+          ))}
+        </nav>
+      </div>
+
+      <div class="footer__contact">
+        <p class="footer__title">Contact</p>
+        <div class="footer__contact-items">
+          <div class="footer__contact-item">
+            <img src="/icons/clock-icon.svg" alt="" />
+            <span>Ma - Vr 8:00 - 17:30</span>
+          </div>
+          <div class="footer__contact-item">
+            <img src="/icons/phone-icon.svg" alt="" />
+            <a href="tel:+31690875647">+31690875647</a>
+          </div>
+          <div class="footer__contact-item">
+            <img src="/icons/mail-icon.svg" alt="" />
+            <a href="mailto:info@timmerfabrieksintnyk.nl">info@timmerfabrieksintnyk.nl</a>
+          </div>
+          <div class="footer__contact-item footer__contact-item--address">
+            <img src="/icons/location-icon.svg" alt="" />
+            <span>
+              Bovenkuier 38<br />
+              8521 MG<br />
+              Sint Nicolaasga
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <p>&copy; {currentYear} Timmerfabriek Sint Nyk - All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background-color: var(--gray-900);
+  }
+
+  .footer__container {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: var(--spacing-64) var(--spacing-16) var(--spacing-32);
+  }
+
+  .footer__inner {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-48);
+    padding-bottom: var(--spacing-48);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .footer__logo img {
+    height: 40px;
+  }
+
+  .footer__description {
+    color: var(--white);
+    opacity: 0.9;
+    margin-top: var(--spacing-24);
+    max-width: 400px;
+  }
+
+  .footer__title {
+    color: var(--white);
+    font-weight: var(--font-semibold);
+    margin-bottom: var(--spacing-24);
+  }
+
+  .footer__nav {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-16);
+  }
+
+  .footer__nav a {
+    color: var(--white);
+    opacity: 0.9;
+    transition: opacity 0.2s ease;
+  }
+
+  .footer__nav a:hover {
+    opacity: 1;
+  }
+
+  .footer__contact-items {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-16);
+  }
+
+  .footer__contact-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-16);
+  }
+
+  .footer__contact-item--address {
+    align-items: flex-start;
+  }
+
+  .footer__contact-item img {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+  }
+
+  .footer__contact-item span,
+  .footer__contact-item a {
+    color: var(--white);
+    opacity: 0.9;
+  }
+
+  .footer__contact-item a:hover {
+    opacity: 1;
+  }
+
+  .footer__bottom {
+    padding-top: var(--spacing-32);
+  }
+
+  .footer__bottom p {
+    color: var(--white);
+    opacity: 0.7;
+    font-size: 0.875rem;
+  }
+
+  /* Desktop */
+  @media (min-width: 1024px) {
+    .footer__inner {
+      flex-direction: row;
+      gap: var(--spacing-80);
+      justify-content: space-between;
+      padding-bottom: var(--spacing-96);
+    }
+
+    .footer__brand {
+      flex: 1;
+    }
+
+    .footer__links {
+      flex-shrink: 0;
+    }
+
+    .footer__container {
+      padding: var(--spacing-96) var(--spacing-32) var(--spacing-32);
+    }
+
+    .footer__contact {
+      flex-shrink: 0;
+    }
+  }
+</style>

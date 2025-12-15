@@ -1,0 +1,99 @@
+ ---
+import { getCollection, render, type CollectionEntry } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+  const projects = await getCollection('projects');
+  return projects.map((project: { id: string; }) => ({
+    params: { slug: project.id.replace('.md', '') },
+    props: { project },
+  }));
+}
+
+interface Props {
+  project: CollectionEntry<'projects'>;
+}
+
+const { project } = Astro.props;
+const { Content } = await render(project);
+---
+
+<Layout title={project.data.title}>
+  <section class="project-hero">
+    <div class="container">
+      <h1>{project.data.title}</h1>
+      <p class="project-hero__description">{project.data.description} {project.data.description}</p>
+    </div>
+  </section>
+
+  <div class="project-image">
+    <div class="container">
+      <img src={project.data.image} alt={project.data.title} />
+    </div>
+  </div>
+
+  <article class="project-content">
+    <div class="container">
+      <div class="project-content__grid">
+        <Content />
+      </div>
+    </div>
+  </article>
+</Layout>
+
+<style>
+  .project-hero {
+    background-color: var(--dark-blue-500);
+  }
+
+  .project-hero h1 {
+    color: var(--white);
+    margin-bottom: var(--spacing-24);
+  }
+
+  .project-hero__description {
+    color: var(--white);
+    opacity: 0.9;
+    max-width: 768px;
+  }
+
+  .project-image {
+    padding: var(--spacing-48) 0;
+  }
+
+  .project-image .container {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .project-image img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+  }
+
+  .project-content .container {
+    padding-top: 0;
+  }
+
+  .project-content__grid {
+    display: grid;
+    gap: var(--spacing-32);
+  }
+
+  .project-content__grid :global(p) {
+    line-height: 1.7;
+  }
+
+  /* Desktop */
+  @media (min-width: 1024px) {
+    .project-image img {
+      height: 560px;
+    }
+
+    .project-content__grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--spacing-48);
+    }
+  }
+</style>
