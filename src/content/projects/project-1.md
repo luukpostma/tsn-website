@@ -4,6 +4,8 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas 
 category: "Onderwerp"
 date: "11-11-2025"
 image: "/images/project-placeholder.webp"
+location: "Sint Nicolaasga"
+client: "Timmerfabriek Sint Nyk"
 ---
 
 orem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis risus odio. Aenean accumsan imperdiet lobortis. Aliquam at lectus viverra, lobortis metus et, dictum diam. Donec vestibulum sapien velit, eu lobortis nulla dictum ac. In non tortor a orci vehicula dapibus ut sit amet odio. Proin id purus non ipsum faucibus imperdiet vel in risus. Proin volutpat, lectus sit amet dictum pulvinar, odio nisi aliquam magna, in laoreet eros urna ut mauris. Cras facilisis, sem vitae luctus venenatis, quam sem tincidunt ex, id condimentum nibh est quis ex. Duis pretium sem nunc, quis lobortis neque pulvinar et. Aliquam eget arcu egestas ex pellentesque varius vel ut elit.

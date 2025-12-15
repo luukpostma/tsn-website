@@ -1,6 +1,7 @@
  ---
 import { getCollection, render, type CollectionEntry } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
+import Button from '../../components/Button.astro';
 
 export async function getStaticPaths() {
   const projects = await getCollection('projects');
@@ -22,7 +23,7 @@ const { Content } = await render(project);
   <section class="project-hero">
     <div class="container">
       <h1>{project.data.title}</h1>
-      <p class="project-hero__description">{project.data.description} {project.data.description}</p>
+      <p class="project-hero__description">{project.data.description}</p>
     </div>
   </section>
 
@@ -35,10 +36,42 @@ const { Content } = await render(project);
   <article class="project-content">
     <div class="container">
       <div class="project-content__grid">
-        <Content />
+        <div class="project-details">
+          <h5>Details</h5>
+          <ul class="details-list">
+            <li>
+              <span class="details-label">Locatie:</span> {project.data.location}
+            </li>
+            <li>
+              <span class="details-label">Opdrachtgever:</span> {project.data.client}
+            </li>
+            <li>
+              <span class="details-label">Service:</span> {project.data.category}
+            </li>
+            <li>
+              <span class="details-label">Datum:</span> {project.data.date}
+            </li>
+          </ul>
+        </div>
+        <div class="project-story">
+          <h5>Project verhaal</h5>
+          <Content />
+        </div>
       </div>
     </div>
   </article>
+
+  <section class="project-cta">
+    <div class="container">
+      <div class="project-cta__content">
+        <div class="project-cta__text">
+          <span class="project-cta__label">— Contact</span>
+          <h2>Klaar voor uw kozijnen?<br /><span>Laten we starten.</span></h2>
+        </div>
+        <Button href="/contact" variant="dark-blue">Contact opnemen</Button>
+      </div>
+    </div>
+  </section>
 </Layout>
 
 <style>
@@ -78,11 +111,66 @@ const { Content } = await render(project);
 
   .project-content__grid {
     display: grid;
+    gap: var(--spacing-48);
+  }
+
+  .project-details h5,
+  .project-story h5 {
+    margin-bottom: var(--spacing-24);
+  }
+
+  .details-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .details-list li {
+    padding: var(--spacing-16) 0;
+    border-bottom: 1px solid var(--gray-300);
+  }
+
+  .details-list li:first-child {
+    padding-top: 0;
+  }
+
+  .project-story :global(p) {
+    line-height: 1.7;
+    margin-bottom: var(--spacing-24);
+  }
+
+  .project-story :global(p:last-child) {
+    margin-bottom: 0;
+  }
+
+  /* CTA Section */
+  .project-cta {
+    background-color: var(--green-500);
+  }
+
+  .project-cta__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     gap: var(--spacing-32);
   }
 
-  .project-content__grid :global(p) {
-    line-height: 1.7;
+  .project-cta__label {
+    color: var(--gray-900);
+    font-weight: var(--font-semibold);
+    margin-bottom: var(--spacing-8);
+    display: block;
+  }
+
+  .project-cta h2 {
+    color: var(--gray-900);
+    font-weight: var(--font-bold);
+    margin: 0;
+  }
+
+  .project-cta h2 span {
+    color: var(--gray-900);
+    font-weight: var(--font-regular);
   }
 
   /* Desktop */
@@ -92,8 +180,14 @@ const { Content } = await render(project);
     }
 
     .project-content__grid {
-      grid-template-columns: repeat(2, 1fr);
-      gap: var(--spacing-48);
+      grid-template-columns: 1fr 2fr;
+      gap: var(--spacing-64);
+    }
+
+    .project-cta__content {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-end;
     }
   }
 </style>
