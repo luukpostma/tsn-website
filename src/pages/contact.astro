@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import FAQ from '../components/FAQ.astro';
+import Button from '../components/Button.astro';
 ---
 
 <Layout title="Contact">
@@ -61,11 +62,10 @@ import FAQ from '../components/FAQ.astro';
               <label for="bericht">Bericht</label>
               <textarea id="bericht" name="bericht" placeholder="Typ hier uw bericht" rows="5" required></textarea>
             </div>
-            <button type="submit" class="form__button">
+            <Button type="submit">
               <span class="form__button-text">Versturen</span>
               <span class="form__button-loading" style="display: none;">Verzenden...</span>
-              <img src="/icons/arrow.svg" alt="" />
-            </button>
+            </Button>
           </form>
         </div>
       </div>
@@ -183,33 +183,6 @@ import FAQ from '../components/FAQ.astro';
     min-height: 120px;
   }
 
-  .form__button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: var(--spacing-8);
-    padding: var(--spacing-16) var(--spacing-24);
-    margin-top: var(--spacing-8);
-    background-color: var(--green-500);
-    color: var(--black);
-    font-family: inherit;
-    font-size: 1.125rem;
-    font-weight: var(--font-semibold);
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.2s ease, box-shadow 0.2s ease;
-  }
-
-  .form__button:hover:not(:disabled) {
-    background-color: var(--green-600);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  }
-
-  .form__button img {
-    width: 20px;
-    height: 20px;
-  }
-
   .form__success {
     display: flex;
     align-items: center;
@@ -231,11 +204,6 @@ import FAQ from '../components/FAQ.astro';
     height: 24px;
   }
 
-  .form__button:disabled {
-    opacity: 0.7;
-    cursor: not-allowed;
-  }
-
   /* Desktop */
   @media (min-width: 1024px) {
     .contact__grid {
@@ -247,10 +215,6 @@ import FAQ from '../components/FAQ.astro';
     .contact__form-wrapper {
       padding-top: var(--spacing-48);
     }
-
-    .form__button {
-      margin-top: var(--spacing-24);
-    }
   }
 </style>
 
@@ -259,7 +223,7 @@ import FAQ from '../components/FAQ.astro';
   const successMessage = document.getElementById('form-success') as HTMLElement;
   const buttonText = document.querySelector('.form__button-text') as HTMLElement;
   const buttonLoading = document.querySelector('.form__button-loading') as HTMLElement;
-  const submitButton = document.querySelector('.form__button') as HTMLButtonElement;
+  const submitButton = document.querySelector('.button') as HTMLButtonElement;
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();

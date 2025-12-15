@@ -1,16 +1,25 @@
 ---
 interface Props {
-  href: string;
+  href?: string;
   variant?: 'green' | 'dark-blue' | 'white';
+  type?: 'button' | 'submit';
 }
 
-const { href, variant = 'green' } = Astro.props;
+const { href, variant = 'green', type } = Astro.props;
+const isButton = type !== undefined;
 ---
 
-<a href={href} class:list={['button', `button--${variant}`]}>
-  <slot />
-  <img src="/icons/arrow.svg" alt="" class="button__icon" />
-</a>
+{isButton ? (
+  <button type={type} class:list={['button', `button--${variant}`]}>
+    <slot />
+    <img src="/icons/arrow.svg" alt="" class="button__icon" />
+  </button>
+) : (
+  <a href={href} class:list={['button', `button--${variant}`]}>
+    <slot />
+    <img src="/icons/arrow.svg" alt="" class="button__icon" />
+  </a>
+)}
 
 <style>
   .button {
@@ -18,8 +27,11 @@ const { href, variant = 'green' } = Astro.props;
     align-items: center;
     gap: var(--spacing-8);
     padding: var(--spacing-12) var(--spacing-24);
-    font-size: 1.125rem;
+    font-family: inherit;
+    font-size: 1rem;
     font-weight: var(--font-semibold);
+    border: none;
+    cursor: pointer;
     transition: background-color 0.2s ease, box-shadow 0.2s ease;
   }
 

@@ -2,7 +2,7 @@
 title: "Project titel 1"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas elit arcu, dictum."
 category: "Onderwerp"
-date: "11-11-2025"
+date: "13-11-2025"
 image: "/images/project-placeholder.webp"
 location: "Sint Nicolaasga"
 client: "Timmerfabriek Sint Nyk"
