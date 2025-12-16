@@ -40,16 +40,20 @@ const { Content } = await render(project);
           <h5>Details</h5>
           <ul class="details-list">
             <li>
-              <span class="details-label">Locatie:</span> {project.data.location}
+              <span class="details-label">Locatie:</span>
+              <span class="details-value">{project.data.location}</span>
             </li>
             <li>
-              <span class="details-label">Opdrachtgever:</span> {project.data.client}
+              <span class="details-label">Klant:</span>
+              <span class="details-value">{project.data.client}</span>
             </li>
             <li>
-              <span class="details-label">Service:</span> {project.data.category}
+              <span class="details-label">Service:</span>
+              <span class="details-value">{project.data.category}</span>
             </li>
             <li>
-              <span class="details-label">Datum:</span> {project.data.date}
+              <span class="details-label">Datum:</span>
+              <span class="details-value">{project.data.date}</span>
             </li>
           </ul>
         </div>
@@ -126,12 +130,23 @@ const { Content } = await render(project);
   }
 
   .details-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding: var(--spacing-16) 0;
     border-bottom: 1px solid var(--gray-300);
   }
 
   .details-list li:first-child {
     padding-top: 0;
+  }
+
+  .details-label {
+    font-weight: var(--font-semibold);
+  }
+
+  .details-value {
+    text-align: right;
   }
 
   .project-story :global(p) {
