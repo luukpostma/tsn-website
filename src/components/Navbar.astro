@@ -3,32 +3,71 @@ import Button from './Button.astro';
 ---
 
 <header class="navbar">
-  <nav class="container-nav navbar__inner">
-    <a href="/" class="navbar__logo">
-      <img src="/icons/logo-white.svg" alt="Timmerfabriek Sint Nyk" />
-    </a>
-
-    <!-- Desktop Navigation -->
-    <div class="navbar__nav">
-      <ul class="navbar__links">
-        <li><a href="/over-ons">Over ons</a></li>
-        <li><a href="/diensten">Diensten</a></li>
-        <li><a href="/projecten">Projecten</a></li>
-      </ul>
-      <div class="navbar__cta">
-        <Button href="/contact">Contact</Button>
+  <!-- Topbar with contact info -->
+  <div class="navbar__topbar">
+    <div class="container-topbar navbar__topbar-inner">
+      <div class="navbar__topbar-left">
+        <span class="navbar__topbar-item">
+          <img src="/icons/location-icon-small.svg" alt="" />
+          <span class="p-small">Bovenkuier 38, 8521 MG Sint Nicolaasga</span>
+        </span>
+        <span class="navbar__topbar-item">
+          <img src="/icons/clock-icon-small.svg" alt="" />
+          <span class="p-small">Ma - Vr 8:00 - 17:30</span>
+        </span>
+      </div>
+      <div class="navbar__topbar-right">
+        <a href="tel:+31690875647" class="navbar__topbar-link">
+          <img src="/icons/phone-icon-small.svg" alt="" />
+          <span class="p-small">+31690875647</span>
+        </a>
+        <a href="mailto:info@timmerfabrieksintynk.nl" class="navbar__topbar-link">
+          <img src="/icons/mail-icon-small.svg" alt="" />
+          <span class="p-small">info@timmerfabrieksintynk.nl</span>
+        </a>
       </div>
     </div>
+  </div>
 
-    <!-- Mobile Menu Button -->
-    <button class="navbar__menu-btn" aria-label="Open menu" aria-expanded="false">
-      <img src="/icons/menu-closed.svg" alt="" class="navbar__menu-icon navbar__menu-icon--closed" />
-      <img src="/icons/menu-open.svg" alt="" class="navbar__menu-icon navbar__menu-icon--open" />
-    </button>
+  <!-- Main navigation -->
+  <nav class="navbar__main">
+    <div class="container-nav navbar__inner">
+      <a href="/" class="navbar__logo">
+        <img src="/icons/logo-white.svg" alt="Timmerfabriek Sint Nyk" />
+      </a>
+
+      <!-- Desktop Navigation -->
+      <div class="navbar__nav">
+        <ul class="navbar__links">
+          <li><a href="/over-ons">Over ons</a></li>
+          <li><a href="/diensten">Diensten</a></li>
+          <li><a href="/projecten">Projecten</a></li>
+        </ul>
+        <div class="navbar__cta">
+          <Button href="/contact">Contact</Button>
+        </div>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button class="navbar__menu-btn" aria-label="Open menu" aria-expanded="false">
+        <img src="/icons/menu-closed.svg" alt="" class="navbar__menu-icon navbar__menu-icon--closed" />
+        <img src="/icons/menu-open.svg" alt="" class="navbar__menu-icon navbar__menu-icon--open" />
+      </button>
+    </div>
   </nav>
 
   <!-- Mobile Navigation -->
   <div class="navbar__mobile">
+    <div class="navbar__mobile-contact">
+      <a href="tel:+31690875647" class="navbar__topbar-link">
+        <img src="/icons/phone-icon-small.svg" alt="" />
+        <span class="p-small">+31690875647</span>
+      </a>
+      <a href="mailto:info@timmerfabrieksintynk.nl" class="navbar__topbar-link">
+        <img src="/icons/mail-icon-small.svg" alt="" />
+        <span class="p-small">info@timmerfabrieksintynk.nl</span>
+      </a>
+    </div>
     <ul class="navbar__mobile-links">
       <li><a href="/over-ons">Over ons</a></li>
       <li><a href="/diensten">Diensten</a></li>
@@ -42,8 +81,54 @@ import Button from './Button.astro';
 
 <style>
   .navbar {
-    background-color: var(--dark-blue-500);
     position: relative;
+  }
+
+  /* Topbar */
+  .navbar__topbar {
+    background-color: var(--gray-900);
+  }
+
+  .navbar__topbar-inner {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: var(--spacing-32);
+  }
+
+  .navbar__topbar-left {
+    display: none;
+    align-items: center;
+    gap: var(--spacing-32);
+  }
+
+  .navbar__topbar-right {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-32);
+  }
+
+  .navbar__topbar-item,
+  .navbar__topbar-link {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-8);
+    color: var(--white);
+  }
+
+  .navbar__topbar-link:hover {
+    opacity: 0.8;
+  }
+
+  .navbar__topbar-item img,
+  .navbar__topbar-link img {
+    width: 16px;
+    height: 16px;
+  }
+
+  /* Main navigation */
+  .navbar__main {
+    background-color: var(--dark-blue-500);
   }
 
   .navbar__inner {
@@ -137,6 +222,14 @@ import Button from './Button.astro';
     font-weight: var(--font-semibold);
   }
 
+  .navbar__mobile-contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-16);
+    margin-bottom: var(--spacing-32);
+  }
+
   .navbar__mobile-cta {
     width: 100%;
   }
@@ -148,6 +241,14 @@ import Button from './Button.astro';
 
   /* Desktop */
   @media (min-width: 1024px) {
+    .navbar__topbar-inner {
+      justify-content: space-between;
+    }
+
+    .navbar__topbar-left {
+      display: flex;
+    }
+
     .navbar__nav {
       display: flex;
     }
