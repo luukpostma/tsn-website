@@ -149,10 +149,14 @@ import Button from './Button.astro';
     color: var(--white);
     font-size: 1rem;
     font-weight: var(--font-semibold);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    padding-bottom: var(--spacing-4);
+    transition: border-color 0.2s ease;
   }
 
   .navbar__links a:hover {
-    opacity: 0.8;
+    border-bottom-color: var(--white);
   }
 
   /* Mobile Menu Button */
