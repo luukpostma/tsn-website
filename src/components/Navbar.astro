@@ -58,16 +58,6 @@ import Button from './Button.astro';
 
   <!-- Mobile Navigation -->
   <div class="navbar__mobile">
-    <div class="navbar__mobile-contact">
-      <a href="tel:+31690875647" class="navbar__topbar-link">
-        <img src="/icons/phone-icon-small.svg" alt="" />
-        <span class="p-small">+31690875647</span>
-      </a>
-      <a href="mailto:info@timmerfabrieksintynk.nl" class="navbar__topbar-link">
-        <img src="/icons/mail-icon-small.svg" alt="" />
-        <span class="p-small">info@timmerfabrieksintynk.nl</span>
-      </a>
-    </div>
     <ul class="navbar__mobile-links">
       <li><a href="/over-ons">Over ons</a></li>
       <li><a href="/diensten">Diensten</a></li>
@@ -220,14 +210,6 @@ import Button from './Button.astro';
     color: var(--white);
     font-size: 1rem;
     font-weight: var(--font-semibold);
-  }
-
-  .navbar__mobile-contact {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: var(--spacing-16);
-    margin-bottom: var(--spacing-32);
   }
 
   .navbar__mobile-cta {
