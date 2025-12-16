@@ -1,0 +1,25 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="404">
+  <section class="not-found">
+    <div class="container">
+      <h1>404,<br />pagina niet gevonden.</h1>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .not-found {
+    background-color: var(--dark-blue-500);
+    min-height: calc(100vh - 200px);
+    display: flex;
+    align-items: center;
+  }
+
+  .not-found h1 {
+    color: var(--white);
+    font-weight: var(--font-regular);
+  }
+</style>
