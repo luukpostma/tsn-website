@@ -62,18 +62,20 @@ const isButton = type !== undefined;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   }
 
-  .button--dark-blue .button__icon {
+  .button--dark-blue .button__icon,
+  .button--white .button__icon {
     filter: brightness(0) invert(1);
   }
 
   /* White variant */
   .button--white {
-    background-color: var(--white);
-    color: var(--black);
+    background-color: transparent;
+    color: var(--white);
+    border: 2px solid var(--white);
   }
 
   .button--white:hover {
-    background-color: var(--gray-400);
+    background-color: transparent;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   }
 </style>
