@@ -13,7 +13,7 @@ import Button from '../components/Button.astro';
             <img src="/icons/line.svg" alt="" />
             Contact
           </p>
-          <h2>Wat heeft u nodig?<br /><span>We helpen u graag.</span></h2>
+          <h1>Wat heeft u nodig?<br /><span>We helpen u graag.</span></h1>
           <p class="contact__text">
             Heb je vragen of wil je een offerte? Neem contact op via telefoonnummer, email of vul het formulier in. We helpen je graag verder.
           </p>
@@ -99,13 +99,22 @@ import Button from '../components/Button.astro';
     filter: brightness(0) invert(1);
   }
 
-  .contact__info h2 {
+  .contact__info h1 {
+    font-size: 2.25rem;
+    line-height: 2.75rem;
     color: var(--white);
     margin-bottom: var(--spacing-24);
   }
 
-  .contact__info h2 span {
+  .contact__info h1 span {
     font-weight: var(--font-regular);
+  }
+
+  @media (min-width: 1024px) {
+    .contact__info h1 {
+      font-size: 3rem;
+      line-height: 3.75rem;
+    }
   }
 
   .contact__text {
