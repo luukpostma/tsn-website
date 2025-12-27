@@ -1,0 +1,6 @@
+# Robots.txt for Timmerfabriek Sint Nyk
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://timmerfabrieksintnyk.nl/sitemap-index.xml

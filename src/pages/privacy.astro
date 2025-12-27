@@ -2,7 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="Privacyverklaring">
+<Layout title="Privacyverklaring" description="Privacyverklaring van Timmerfabriek Sint Nyk. Lees hoe wij omgaan met uw persoonsgegevens en welke rechten u heeft.">
   <section class="privacy-hero">
     <div class="container">
       <h1>Privacyverklaring</h1>
@@ -16,7 +16,7 @@ import Layout from '../layouts/Layout.astro';
     <div class="container">
       <div class="privacy-content__inner">
         <section class="privacy-section">
-          <p><strong>Contactgegevens</strong></p>
+          <h2>Contactgegevens</h2>
           <p>
             Timmerfabriek Sint Nyk<br />
             Bovenkuier 38<br />
@@ -26,7 +26,7 @@ import Layout from '../layouts/Layout.astro';
         </section>
 
         <section class="privacy-section">
-          <p><strong>Persoonsgegevens die wij verwerken</strong></p>
+          <h2>Persoonsgegevens die wij verwerken</h2>
           <p>
             Timmerfabriek Sint Nyk verwerkt persoonsgegevens die u actief aan ons verstrekt via het contactformulier op onze website. Het gaat om de volgende gegevens:
           </p>
@@ -39,35 +39,35 @@ import Layout from '../layouts/Layout.astro';
         </section>
 
         <section class="privacy-section">
-          <p><strong>Met welk doel wij persoonsgegevens verwerken</strong></p>
+          <h2>Met welk doel wij persoonsgegevens verwerken</h2>
           <p>
             Wij verwerken uw persoonsgegevens uitsluitend voor het beantwoorden van uw vraag of verzoek dat u via het contactformulier aan ons stuurt.
           </p>
         </section>
 
         <section class="privacy-section">
-          <p><strong>Grondslag voor verwerking</strong></p>
+          <h2>Grondslag voor verwerking</h2>
           <p>
             Wij verwerken uw gegevens op basis van uw toestemming, die u geeft door het contactformulier in te vullen en te verzenden. U kunt deze toestemming te allen tijde intrekken.
           </p>
         </section>
 
         <section class="privacy-section">
-          <p><strong>Bewaartermijn</strong></p>
+          <h2>Bewaartermijn</h2>
           <p>
             Wij bewaren uw persoonsgegevens niet langer dan strikt noodzakelijk is om de doelen te realiseren waarvoor uw gegevens worden verzameld. Berichten via het contactformulier worden bewaard zolang dit nodig is voor de afhandeling van uw vraag en eventuele vervolgcommunicatie, met een maximum van 2 jaar.
           </p>
         </section>
 
         <section class="privacy-section">
-          <p><strong>Delen met derden</strong></p>
+          <h2>Delen met derden</h2>
           <p>
             Timmerfabriek Sint Nyk verkoopt uw gegevens niet aan derden en zal deze uitsluitend verstrekken indien dit nodig is voor de uitvoering van onze overeenkomst met u of om te voldoen aan een wettelijke verplichting.
           </p>
         </section>
 
         <section class="privacy-section">
-          <p><strong>Website en hosting</strong></p>
+          <h2>Website en hosting</h2>
           <p>
             Onze website wordt gehost via Cloudflare Pages. Cloudflare kan technische gegevens verzamelen die noodzakelijk zijn voor het functioneren en beveiligen van de website, zoals IP-adressen en browserinformatie. Voor meer informatie verwijzen wij naar het privacybeleid van Cloudflare: https://www.cloudflare.com/privacypolicy/
           </p>
@@ -77,14 +77,14 @@ import Layout from '../layouts/Layout.astro';
         </section>
 
         <section class="privacy-section">
-          <p><strong>Cookies</strong></p>
+          <h2>Cookies</h2>
           <p>
             Onze website maakt geen gebruik van marketing- of trackingcookies. Cloudflare kan functionele of technische cookies plaatsen die noodzakelijk zijn voor de werking en beveiliging van de website.
           </p>
         </section>
 
         <section class="privacy-section">
-          <p><strong>Uw rechten</strong></p>
+          <h2>Uw rechten</h2>
           <p>
             U heeft het recht om uw persoonsgegevens in te zien, te corrigeren of te verwijderen. Daarnaast heeft u het recht om uw eventuele toestemming voor de gegevensverwerking in te trekken of bezwaar te maken tegen de verwerking van uw persoonsgegevens door ons. Ook heeft u het recht op gegevensoverdraagbaarheid.
           </p>
@@ -94,28 +94,28 @@ import Layout from '../layouts/Layout.astro';
         </section>
 
         <section class="privacy-section">
-          <p><strong>Beveiliging</strong></p>
+          <h2>Beveiliging</h2>
           <p>
             Timmerfabriek Sint Nyk neemt de bescherming van uw gegevens serieus en neemt passende maatregelen om misbruik, verlies, onbevoegde toegang, ongewenste openbaarmaking en ongeoorloofde wijziging tegen te gaan. Onze website maakt gebruik van een beveiligde verbinding (SSL/TLS).
           </p>
         </section>
 
         <section class="privacy-section">
-          <p><strong>Klachten</strong></p>
+          <h2>Klachten</h2>
           <p>
             Mocht u een klacht hebben over de verwerking van uw persoonsgegevens, dan vragen wij u hierover direct contact met ons op te nemen. U heeft altijd het recht een klacht in te dienen bij de Autoriteit Persoonsgegevens, de toezichthoudende autoriteit op het gebied van privacybescherming.
           </p>
         </section>
 
         <section class="privacy-section">
-          <p><strong>Wijzigingen</strong></p>
+          <h2>Wijzigingen</h2>
           <p>
             Deze privacyverklaring kan worden gewijzigd. Wij adviseren u daarom regelmatig deze verklaring te raadplegen.
           </p>
         </section>
 
         <section class="privacy-section">
-          <p><strong>Laatst bijgewerkt: december 2025</strong></p>
+          <p><em>Laatst bijgewerkt: december 2025</em></p>
         </section>
       </div>
     </div>
@@ -152,6 +152,12 @@ import Layout from '../layouts/Layout.astro';
 
   .privacy-section:last-child {
     margin-bottom: 0;
+  }
+
+  .privacy-section h2 {
+    font-size: 1.125rem;
+    line-height: 1.5rem;
+    margin-bottom: var(--spacing-16);
   }
 
   .privacy-section p {

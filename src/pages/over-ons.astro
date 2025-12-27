@@ -3,12 +3,12 @@ import Layout from '../layouts/Layout.astro';
 import CTA from '../components/CTA.astro';
 ---
 
-<Layout title="Over ons">
+<Layout title="Over ons" description="Leer ons kennen: Timmerfabriek Sint Nyk heeft 20+ jaar ervaring in houten timmerwerk. Een jong en lokaal team met passie voor vakmanschap.">
   <section class="about-header">
     <div class="container">
       <div class="about-header__intro">
         <p class="about-header__label">
-          <img src="/icons/line.svg" alt="" />
+          <img src="/icons/line.svg" alt="" aria-hidden="true" />
           Over ons
         </p>
         <h1>Timmerfabriek Sint Nyk,<br /><span>hout met oog voor detail.</span></h1>
@@ -20,7 +20,7 @@ import CTA from '../components/CTA.astro';
       </div>
 
       <div class="about-header__image">
-        <img src="/images/over-ons-image.webp" alt="Timmerfabriek Sint Nyk aan het werk" />
+        <img src="/images/over-ons-image.webp" alt="Timmerfabriek Sint Nyk aan het werk" loading="lazy" />
       </div>
 
       <div class="about-content__grid">

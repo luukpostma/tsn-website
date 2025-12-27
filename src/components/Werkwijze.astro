@@ -25,7 +25,7 @@ const steps = [
     <div class="werkwijze__header">
       <div class="werkwijze__intro">
         <p class="werkwijze__label">
-          <img src="/icons/line.svg" alt="" />
+          <img src="/icons/line.svg" alt="" aria-hidden="true" />
           Werkwijze
         </p>
         <h2>Hoe wij werken,<br /><span>voor uw huis.</span></h2>
@@ -41,7 +41,7 @@ const steps = [
     <div class="werkwijze__grid">
       {steps.map((step) => (
         <div class="werkwijze__card">
-          <img src={step.icon} alt="" class="werkwijze__icon" />
+          <img src={step.icon} alt="" class="werkwijze__icon" aria-hidden="true" />
           <h3>{step.title}</h3>
           <p>{step.description}</p>
         </div>
@@ -110,7 +110,7 @@ const steps = [
   }
 
   .werkwijze__card:hover {
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow-sm);
   }
 
   .werkwijze__icon {

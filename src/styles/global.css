@@ -122,3 +122,34 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+
+/* ===========================================
+   Utility Classes
+   =========================================== */
+
+/* Section Label - used for section introductions */
+.section-label {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-12);
+  font-weight: var(--font-semibold);
+  margin-bottom: var(--spacing-16);
+}
+
+.section-label img {
+  width: 24px;
+}
+
+/* Heading Light - for secondary text in headings */
+.heading-light {
+  font-weight: var(--font-regular);
+}
+
+/* Card Hover Effect */
+.card-hover {
+  transition: box-shadow 0.2s ease;
+}
+
+.card-hover:hover {
+  box-shadow: var(--shadow-md);
+}

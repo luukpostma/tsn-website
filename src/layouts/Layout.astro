@@ -5,23 +5,95 @@ import Footer from '../components/Footer.astro';
 
 interface Props {
   title: string;
+  description?: string;
+  image?: string;
 }
 
-const { title } = Astro.props;
+const {
+  title,
+  description = "Timmerfabriek Sint Nyk maakt houten kozijnen, ramen en deuren op maat. Al 20+ jaar vakmanschap in Sint Nicolaasga, Friesland.",
+  image = "/images/og-image.webp"
+} = Astro.props;
+
+const siteUrl = "https://timmerfabrieksintnyk.nl";
+const canonicalUrl = new URL(Astro.url.pathname, siteUrl).toString();
+const fullTitle = `${title} | Timmerfabriek Sint Nyk`;
 ---
 
 <!doctype html>
 <html lang="nl">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+
+    <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" type="image/png" href="/favicon.png" />
     <link rel="apple-touch-icon" href="/favicon.png" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={`${siteUrl}${image}`} />
+    <meta property="og:locale" content="nl_NL" />
+    <meta property="og:site_name" content="Timmerfabriek Sint Nyk" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={`${siteUrl}${image}`} />
+
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <title>{title} | Timmerfabriek Sint Nyk</title>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json" is:inline>
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Timmerfabriek Sint Nyk",
+        "image": "https://timmerfabrieksintnyk.nl/images/og-image.webp",
+        "description": "Timmerfabriek Sint Nyk maakt houten kozijnen, ramen en deuren op maat. Al 20+ jaar vakmanschap in Sint Nicolaasga, Friesland.",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Bovenkuier 38",
+          "addressLocality": "Sint Nicolaasga",
+          "postalCode": "8521 MG",
+          "addressCountry": "NL"
+        },
+        "telephone": "+31690875647",
+        "email": "info@timmerfabrieksintnyk.nl",
+        "url": "https://timmerfabrieksintnyk.nl",
+        "openingHours": "Mo-Fr 08:00-17:30",
+        "priceRange": "$$",
+        "areaServed": {
+          "@type": "Country",
+          "name": "Nederland"
+        },
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Onze diensten",
+          "itemListElement": [
+            {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Houten kozijnen op maat"}},
+            {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Houten ramen"}},
+            {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Houten deuren"}},
+            {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Schuifpuien"}},
+            {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Beglazing"}},
+            {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Montage"}}
+          ]
+        }
+      }
+    </script>
+
+    <title>{fullTitle}</title>
   </head>
   <body>
     <Navbar />

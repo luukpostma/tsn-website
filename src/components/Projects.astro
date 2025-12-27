@@ -11,7 +11,7 @@ const latestProjects = projects.slice(0, 3);
     <div class="projects__header">
       <div class="projects__intro">
         <p class="projects__label">
-          <img src="/icons/line.svg" alt="" />
+          <img src="/icons/line.svg" alt="" aria-hidden="true" />
           Projecten
         </p>
         <h3>Dit hebben we gemaakt,<br /><span>onze recente projecten.</span></h3>
@@ -29,14 +29,14 @@ const latestProjects = projects.slice(0, 3);
       {latestProjects.map((project: { id: string; data: { image: string | null | undefined; title: unknown; description: unknown; category: unknown; date: unknown; }; }) => (
         <a href={`/projecten/${project.id.replace('.md', '')}`} class="projects__card">
           <div class="projects__image">
-            <img src={project.data.image} alt={String(project.data.title)} />
+            <img src={project.data.image} alt={String(project.data.title)} loading="lazy" />
           </div>
           <div class="projects__content">
             <h5>{project.data.title}</h5>
             <p>{project.data.description}</p>
             <div class="projects__meta">
               <span>{project.data.category} - {project.data.date}</span>
-              <img src="/icons/arrow.svg" alt="" class="projects__arrow" />
+              <img src="/icons/arrow.svg" alt="" class="projects__arrow" aria-hidden="true" />
             </div>
           </div>
         </a>
@@ -99,7 +99,7 @@ const latestProjects = projects.slice(0, 3);
   }
 
   .projects__card:hover {
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    box-shadow: var(--shadow-md);
   }
 
   .projects__image img {

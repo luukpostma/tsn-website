@@ -4,13 +4,13 @@ import FAQ from '../components/FAQ.astro';
 import Button from '../components/Button.astro';
 ---
 
-<Layout title="Contact">
+<Layout title="Contact" description="Neem contact op met Timmerfabriek Sint Nyk voor een vrijblijvende offerte. Bel, mail of vul het formulier in. We helpen u graag verder.">
   <section class="contact">
     <div class="container">
       <div class="contact__grid">
         <div class="contact__info">
           <p class="contact__label">
-            <img src="/icons/line.svg" alt="" />
+            <img src="/icons/line.svg" alt="" aria-hidden="true" />
             Contact
           </p>
           <h1>Wat heeft u nodig?<br /><span>We helpen u graag.</span></h1>
@@ -20,19 +20,19 @@ import Button from '../components/Button.astro';
 
           <div class="contact__details">
             <div class="contact__item">
-              <img src="/icons/phone-icon.svg" alt="" />
+              <img src="/icons/phone-icon.svg" alt="" aria-hidden="true" />
               <a href="tel:+31690875647">+31690875647</a>
             </div>
             <div class="contact__item">
-              <img src="/icons/mail-icon.svg" alt="" />
+              <img src="/icons/mail-icon.svg" alt="" aria-hidden="true" />
               <a href="mailto:info@timmerfabrieksintnyk.nl">info@timmerfabrieksintnyk.nl</a>
             </div>
             <div class="contact__item">
-              <img src="/icons/clock-icon.svg" alt="" />
+              <img src="/icons/clock-icon.svg" alt="" aria-hidden="true" />
               <span>Ma - Vr 8:00 - 17:30</span>
             </div>
             <div class="contact__item">
-              <img src="/icons/location-icon.svg" alt="" />
+              <img src="/icons/location-icon.svg" alt="" aria-hidden="true" />
               <span>Bovenkuier 38, 8521 MG Sint Nicolaasga</span>
             </div>
           </div>
@@ -41,7 +41,7 @@ import Button from '../components/Button.astro';
         <div class="contact__form-wrapper">
           <div id="form-success" class="form__success" style="display: none;">
             <span>Bericht verzonden!</span>
-            <img src="/icons/check-icon.svg" alt="" />
+            <img src="/icons/check-icon.svg" alt="" aria-hidden="true" />
           </div>
 
           <form id="contact-form" class="contact__form">

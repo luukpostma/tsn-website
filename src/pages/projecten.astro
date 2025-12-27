@@ -16,13 +16,13 @@ const sortedProjects = projects.sort((a, b) => {
 });
 ---
 
-<Layout title="Projecten">
+<Layout title="Projecten" description="Bekijk onze recente projecten: houten kozijnen, ramen en deuren in verschillende woningen. Elk project uniek, elk gemaakt op maat.">
   <section class="projects">
     <div class="container">
       <div class="projects__header">
         <div class="projects__intro">
           <p class="projects__label">
-            <img src="/icons/line.svg" alt="" />
+            <img src="/icons/line.svg" alt="" aria-hidden="true" />
             Projecten
           </p>
           <h1>Dit hebben we gemaakt,<br /><span>onze recente projecten.</span></h1>
@@ -37,14 +37,14 @@ const sortedProjects = projects.sort((a, b) => {
         {sortedProjects.map((project) => (
           <a href={`/projecten/${project.id.replace('.md', '')}`} class="projects__card">
             <div class="projects__image">
-              <img src={project.data.image} alt={project.data.title} />
+              <img src={project.data.image} alt={project.data.title} loading="lazy" />
             </div>
             <div class="projects__content">
               <h2>{project.data.title}</h2>
               <p>{project.data.description}</p>
               <div class="projects__meta">
                 <span>{project.data.category} - {project.data.date}</span>
-                <img src="/icons/arrow.svg" alt="" class="projects__arrow" />
+                <img src="/icons/arrow.svg" alt="" class="projects__arrow" aria-hidden="true" />
               </div>
             </div>
           </a>
@@ -57,20 +57,6 @@ const sortedProjects = projects.sort((a, b) => {
 </Layout>
 
 <style>
-  .hero {
-    background-color: var(--dark-blue-500);
-  }
-
-  .hero h1 {
-    color: var(--white);
-    margin-bottom: var(--spacing-24);
-  }
-
-  .hero__description {
-    color: var(--white);
-    max-width: 768px;
-  }
-
   .projects__header {
     display: flex;
     flex-direction: column;
@@ -104,15 +90,6 @@ const sortedProjects = projects.sort((a, b) => {
     max-width: 768px;
   }
 
-  .projects__cta {
-    display: flex;
-  }
-
-  .projects__cta :global(.button) {
-    width: 100%;
-    justify-content: center;
-  }
-
   .projects__grid {
     display: grid;
     gap: var(--spacing-32);
@@ -126,7 +103,7 @@ const sortedProjects = projects.sort((a, b) => {
   }
 
   .projects__card:hover {
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    box-shadow: var(--shadow-md);
   }
 
   .projects__image img {
@@ -182,10 +159,6 @@ const sortedProjects = projects.sort((a, b) => {
       justify-content: space-between;
       align-items: flex-end;
       margin-bottom: var(--spacing-64);
-    }
-
-    .projects__cta :global(.button) {
-      width: auto;
     }
 
     .projects__grid {

@@ -24,7 +24,7 @@ const faqs = [
     <div class="faq__inner">
       <div class="faq__intro">
         <p class="faq__label">
-          <img src="/icons/line.svg" alt="" />
+          <img src="/icons/line.svg" alt="" aria-hidden="true" />
           Vragen
         </p>
         <h3>Heeft u een vraag?<br /><span>Hier beantwoorden we ze.</span></h3>
@@ -38,8 +38,8 @@ const faqs = [
           <details class="faq__item" name="faq">
             <summary class="faq__question">
               <span>{faq.question}</span>
-              <img src="/icons/plus-icon.svg" alt="" class="faq__icon faq__icon--plus" />
-              <img src="/icons/minus-icon.svg" alt="" class="faq__icon faq__icon--minus" />
+              <img src="/icons/plus-icon.svg" alt="" class="faq__icon faq__icon--plus" aria-hidden="true" />
+              <img src="/icons/minus-icon.svg" alt="" class="faq__icon faq__icon--minus" aria-hidden="true" />
             </summary>
             <p class="faq__answer">{faq.answer}</p>
           </details>

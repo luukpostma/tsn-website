@@ -12,12 +12,12 @@ const isButton = type !== undefined;
 {isButton ? (
   <button type={type} class:list={['button', `button--${variant}`]}>
     <slot />
-    <img src="/icons/arrow.svg" alt="" class="button__icon" />
+    <img src="/icons/arrow.svg" alt="" class="button__icon" aria-hidden="true" />
   </button>
 ) : (
   <a href={href} class:list={['button', `button--${variant}`]}>
     <slot />
-    <img src="/icons/arrow.svg" alt="" class="button__icon" />
+    <img src="/icons/arrow.svg" alt="" class="button__icon" aria-hidden="true" />
   </a>
 )}
 
@@ -75,5 +75,11 @@ const isButton = type !== undefined;
   .button--white:hover {
     background-color: var(--gray-400);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  /* Focus state for accessibility */
+  .button:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 2px;
   }
 </style>
