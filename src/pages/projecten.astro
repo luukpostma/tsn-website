@@ -18,17 +18,22 @@ const sortedProjects = projects.sort((a, b) => {
 ---
 
 <Layout title="Projecten">
-  <section class="hero">
-    <div class="container">
-      <h1>Projecten</h1>
-      <p class="hero__description">
-        Van renovatie tot nieuwbouw: ontdek de projecten die wij hebben gerealiseerd. Elk project is uniek en laat zien waartoe vakmanschap en maatwerk leiden.
-      </p>
-    </div>
-  </section>
-
   <section class="projects">
     <div class="container">
+      <div class="projects__header">
+        <div class="projects__intro">
+          <p class="projects__label">
+            <img src="/icons/line.svg" alt="" />
+            Projecten
+          </p>
+          <h3>Dit hebben we gemaakt,<br /><span>onze recente projecten.</span></h3>
+          <p class="projects__text">
+            Dit zijn enkele projecten waar we aan hebben gewerkt.
+            Houten kozijnen, ramen en deuren in verschillende huizen in de buurt. Elk project uniek, elk gemaakt op maat.
+          </p>
+        </div>
+      </div>
+
       <div class="projects__grid">
         {sortedProjects.map((project) => (
           <a href={`/projecten/${project.id.replace('.md', '')}`} class="projects__card">

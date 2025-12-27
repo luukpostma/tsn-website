@@ -4,85 +4,89 @@ import CTA from '../components/CTA.astro';
 ---
 
 <Layout title="Over ons">
-  <section class="about-hero">
+  <section class="about-header">
     <div class="container">
-      <h1>Over ons</h1>
-      <p class="about-hero__description">
-        Timmerfabriek Sint Nyk maakt en monteert maatwerk houten kozijnen die perfect aansluiten op uw woning. Met jaren vakmanschap leveren we kozijnen die lang meegaan.
-      </p>
-    </div>
-  </section>
+      <div class="about-header__intro">
+        <p class="about-header__label">
+          <img src="/icons/line.svg" alt="" />
+          Over ons
+        </p>
+        <h3>Timmerfabriek Sint Nyk,<br /><span>hout met oog voor detail.</span></h3>
+        <p class="about-header__text">
+          Timmerfabriek Sint Nyk heeft 20+ jaar ervaring in houten timmerwerk.
+          Ons team levert maatwerk houten kozijnen, ramen en deuren met vakmanschap en aandacht voor detail.
+          We maken projecten die blijven staan.
+        </p>
+      </div>
 
-  <div class="about-image">
-    <div class="container">
-      <img src="/images/over-ons-image.webp" alt="Timmerfabriek Sint Nyk aan het werk" />
-    </div>
-  </div>
+      <div class="about-header__image">
+        <img src="/images/over-ons-image.webp" alt="Timmerfabriek Sint Nyk aan het werk" />
+      </div>
 
-  <article class="about-content">
-    <div class="container">
       <div class="about-content__grid">
         <div class="about-content__column">
           <p>
-            Bij Timmerfabriek Sint Nyk draait alles om vakmanschap en kwaliteit. Al jarenlang maken wij houten kozijnen, ramen en deuren op maat voor particulieren en bedrijven in heel Nederland. Onze ervaren timmerlieden combineren traditionele ambachtelijke technieken met moderne productiemethoden.
+            Bij Timmerfabriek Sint Nyk draait alles om vakmanschap en kwaliteit. Al meer dan 20 jaar maken wij houten kozijnen, ramen en deuren op maat voor particulieren en bedrijven in heel Nederland. Ons jong en lokaal team combineren traditionele ambachtelijke technieken met moderne productie.
           </p>
           <p>
-            Elk project begint met een persoonlijk gesprek. We luisteren naar uw wensen, bekijken de situatie ter plaatse en adviseren over de beste oplossing. Of het nu gaat om een nieuwbouwwoning, een monumentaal pand of een renovatieproject, wij leveren maatwerk dat perfect past.
+            Elk project begint met een eerlijk gesprek. We luisteren naar uw wensen, bekijken de situatie ter plaatse en adviseren transparant over de beste oplossing. Nieuwbouw, monument of renovatie – wij leveren maatwerk dat perfect past.
           </p>
           <p>
-            Wij werken uitsluitend met duurzaam hout van hoge kwaliteit. Door onze zorgvuldige afwerking en behandeling gaan onze kozijnen tientallen jaren mee. We staan achter onze producten en bieden uitgebreide garantie op al ons werk.
+            Wij werken uitsluitend met duurzaam hout van hoge kwaliteit. Door zorgvuldige afwerking gaan onze kozijnen tientallen jaren mee. We staan achter ons werk.
           </p>
         </div>
         <div class="about-content__column">
           <p>
-            Ons team bestaat uit gedreven vakmensen die trots zijn op hun werk. Van ontwerp tot montage, alles wordt met de grootste zorg uitgevoerd. We investeren continu in de ontwikkeling van onze medewerkers en in moderne machines om de beste kwaliteit te kunnen blijven leveren.
+            Onze kleine team bestaat uit gedreven vakmensen die trots zijn op hun werk. Van ontwerp tot montage, alles gebeurt met zorg en aandacht. We investeren continu in onze medewerkers en moderne machines.
           </p>
           <p>
-            Timmerfabriek Sint Nyk is gevestigd in Sint Nicolaasga, in het hart van Friesland. Vanuit onze werkplaats bedienen we klanten in de wijde omgeving. Dankzij onze centrale ligging kunnen we snel schakelen en zijn we altijd bereikbaar voor vragen of service.
-          </p>
-          <p>
-            Wij geloven in persoonlijk contact en een langdurige relatie met onze klanten. Veel opdrachtgevers komen bij ons terug voor nieuwe projecten of bevelen ons aan bij anderen. Die waardering is voor ons de mooiste beloning voor ons vakmanschap.
+            We houden van een uitdaging en staan graag voor u klaar. Transparantie en persoonlijk contact zijn voor ons vanzelfsprekend – niet alleen tijdens het project, maar ook daarna.
           </p>
         </div>
       </div>
     </div>
-  </article>
+  </section>
 
   <CTA />
 </Layout>
 
 <style>
-  .about-hero {
-    background-color: var(--dark-blue-500);
+  .about-header__intro {
+    margin-bottom: var(--spacing-48);
   }
 
-  .about-hero h1 {
-    color: var(--white);
+  .about-header__label {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-12);
+    font-weight: var(--font-semibold);
+    margin-bottom: var(--spacing-16);
+  }
+
+  .about-header__label img {
+    width: 24px;
+  }
+
+  .about-header__intro h3 {
     margin-bottom: var(--spacing-24);
   }
 
-  .about-hero__description {
-    color: var(--white);
+  .about-header__intro h3 span {
+    font-weight: var(--font-regular);
+  }
+
+  .about-header__text {
     max-width: 768px;
   }
 
-  .about-image {
-    padding: var(--spacing-64) 0 var(--spacing-48) 0;
+  .about-header__image {
+    margin-bottom: var(--spacing-64);
   }
 
-  .about-image .container {
-    padding-top: 0;
-    padding-bottom: 0;
-  }
-
-  .about-image img {
+  .about-header__image img {
     width: 100%;
-    height: 300px;
+    height: 240px;
     object-fit: cover;
-  }
-
-  .about-content .container {
-    padding-top: 0;
   }
 
   .about-content__grid {
@@ -98,13 +102,12 @@ import CTA from '../components/CTA.astro';
 
   /* Desktop */
   @media (min-width: 1024px) {
-
-    .about-image {
-      padding: var(--spacing-96) 0 var(--spacing-48) 0
+    .about-header__intro {
+      margin-bottom: var(--spacing-64);
     }
 
-    .about-image img {
-      height: 560px;
+    .about-header__image img {
+      height: 480px;
     }
 
     .about-content__grid {
