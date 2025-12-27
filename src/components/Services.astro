@@ -5,9 +5,10 @@ interface Props {
   showAll?: boolean;
   buttonText?: string;
   buttonHref?: string;
+  isMainPage?: boolean;
 }
 
-const { showAll = false, buttonText = 'Alle diensten', buttonHref = '/diensten' } = Astro.props;
+const { showAll = false, buttonText = 'Alle diensten', buttonHref = '/diensten', isMainPage = false } = Astro.props;
 
 const allServices = [
   {
@@ -53,7 +54,11 @@ const services = showAll ? allServices : allServices.slice(0, 3);
           <img src="/icons/line.svg" alt="" />
           Onze diensten
         </p>
-        <h3>Mooi houtwerk,<br /><span>precies zoals u het wilt.</span></h3>
+        {isMainPage ? (
+          <h1>Mooi houtwerk,<br /><span>precies zoals u het wilt.</span></h1>
+        ) : (
+          <h3>Mooi houtwerk,<br /><span>precies zoals u het wilt.</span></h3>
+        )}
         <p class="services__text">
           Bij Timmerfabriek Sint Nyk in Sint Nicolaasga maken en monteren we houten ramen, deuren, kozijnen, schuifpuien en beglazing. 
           Of uw voorkeur klassiek of modern is, we zorgen voor perfecte pasvorm, vakkundig afgestemd op uw woning en bouwstijl.
@@ -68,7 +73,7 @@ const services = showAll ? allServices : allServices.slice(0, 3);
       {services.map((service) => (
         <div class="services__card">
           <img src={service.icon} alt="" class="services__icon" />
-          <h5>{service.title}</h5>
+          {isMainPage ? <h2>{service.title}</h2> : <h4>{service.title}</h4>}
           <p>{service.description}</p>
         </div>
       ))}
@@ -96,10 +101,14 @@ const services = showAll ? allServices : allServices.slice(0, 3);
     width: 24px;
   }
 
+  .services__intro h1,
   .services__intro h3 {
+    font-size: 1.875rem;
+    line-height: 2.375rem;
     margin-bottom: var(--spacing-24);
   }
 
+  .services__intro h1 span,
   .services__intro h3 span {
     font-weight: var(--font-regular);
   }
@@ -138,12 +147,27 @@ const services = showAll ? allServices : allServices.slice(0, 3);
     margin-bottom: var(--spacing-48);
   }
 
-  .services__card h5 {
+  .services__card h2,
+  .services__card h4 {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
     margin-bottom: var(--spacing-12);
   }
 
   /* Desktop */
   @media (min-width: 1024px) {
+    .services__intro h1,
+    .services__intro h3 {
+      font-size: 2.25rem;
+      line-height: 2.75rem;
+    }
+
+    .services__card h2,
+    .services__card h4 {
+      font-size: 1.5rem;
+      line-height: 2rem;
+    }
+
     .services__header {
       flex-direction: row;
       justify-content: space-between;

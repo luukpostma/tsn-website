@@ -28,7 +28,7 @@ const steps = [
           <img src="/icons/line.svg" alt="" />
           Werkwijze
         </p>
-        <h3>Hoe wij werken,<br /><span>voor uw huis.</span></h3>
+        <h2>Hoe wij werken,<br /><span>voor uw huis.</span></h2>
         <p class="werkwijze__text">
           Van eerste kennismaking tot eindoplevering: bij Timmerfabriek Sint Nyk werken we stap voor stap aan uw project. Transparant, vakkundig en met oog voor detail.
         </p>
@@ -42,7 +42,7 @@ const steps = [
       {steps.map((step) => (
         <div class="werkwijze__card">
           <img src={step.icon} alt="" class="werkwijze__icon" />
-          <h5>{step.title}</h5>
+          <h3>{step.title}</h3>
           <p>{step.description}</p>
         </div>
       ))}
@@ -74,11 +74,13 @@ const steps = [
     width: 24px;
   }
 
-  .werkwijze__intro h3 {
+  .werkwijze__intro h2 {
+    font-size: 1.875rem;
+    line-height: 2.375rem;
     margin-bottom: var(--spacing-24);
   }
 
-  .werkwijze__intro h3 span {
+  .werkwijze__intro h2 span {
     font-weight: var(--font-regular);
   }
 
@@ -117,12 +119,24 @@ const steps = [
     margin-bottom: var(--spacing-48);
   }
 
-  .werkwijze__card h5 {
+  .werkwijze__card h3 {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
     margin-bottom: var(--spacing-12);
   }
 
   /* Desktop */
   @media (min-width: 1024px) {
+    .werkwijze__intro h2 {
+      font-size: 2.25rem;
+      line-height: 2.75rem;
+    }
+
+    .werkwijze__card h3 {
+      font-size: 1.5rem;
+      line-height: 2rem;
+    }
+
     .werkwijze__header {
       flex-direction: row;
       justify-content: space-between;

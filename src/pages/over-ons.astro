@@ -11,7 +11,7 @@ import CTA from '../components/CTA.astro';
           <img src="/icons/line.svg" alt="" />
           Over ons
         </p>
-        <h3>Timmerfabriek Sint Nyk,<br /><span>hout met oog voor detail.</span></h3>
+        <h1>Timmerfabriek Sint Nyk,<br /><span>hout met oog voor detail.</span></h1>
         <p class="about-header__text">
           Timmerfabriek Sint Nyk heeft 20+ jaar ervaring in houten timmerwerk.
           Ons team levert maatwerk houten kozijnen, ramen en deuren met vakmanschap en aandacht voor detail.
@@ -67,11 +67,13 @@ import CTA from '../components/CTA.astro';
     width: 24px;
   }
 
-  .about-header__intro h3 {
+  .about-header__intro h1 {
+    font-size: 1.875rem;
+    line-height: 2.375rem;
     margin-bottom: var(--spacing-24);
   }
 
-  .about-header__intro h3 span {
+  .about-header__intro h1 span {
     font-weight: var(--font-regular);
   }
 
@@ -104,6 +106,11 @@ import CTA from '../components/CTA.astro';
   @media (min-width: 1024px) {
     .about-header__intro {
       margin-bottom: var(--spacing-64);
+    }
+
+    .about-header__intro h1 {
+      font-size: 2.25rem;
+      line-height: 2.75rem;
     }
 
     .about-header__image img {

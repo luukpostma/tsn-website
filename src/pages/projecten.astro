@@ -1,7 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
-import Button from '../components/Button.astro';
 import CTA from '../components/CTA.astro';
 
 const projects = await getCollection('projects');
@@ -26,7 +25,7 @@ const sortedProjects = projects.sort((a, b) => {
             <img src="/icons/line.svg" alt="" />
             Projecten
           </p>
-          <h3>Dit hebben we gemaakt,<br /><span>onze recente projecten.</span></h3>
+          <h1>Dit hebben we gemaakt,<br /><span>onze recente projecten.</span></h1>
           <p class="projects__text">
             Dit zijn enkele projecten waar we aan hebben gewerkt.
             Houten kozijnen, ramen en deuren in verschillende huizen in de buurt. Elk project uniek, elk gemaakt op maat.
@@ -41,7 +40,7 @@ const sortedProjects = projects.sort((a, b) => {
               <img src={project.data.image} alt={project.data.title} />
             </div>
             <div class="projects__content">
-              <h5>{project.data.title}</h5>
+              <h2>{project.data.title}</h2>
               <p>{project.data.description}</p>
               <div class="projects__meta">
                 <span>{project.data.category} - {project.data.date}</span>
@@ -91,11 +90,13 @@ const sortedProjects = projects.sort((a, b) => {
     width: 24px;
   }
 
-  .projects__intro h3 {
+  .projects__intro h1 {
+    font-size: 1.875rem;
+    line-height: 2.375rem;
     margin-bottom: var(--spacing-24);
   }
 
-  .projects__intro h3 span {
+  .projects__intro h1 span {
     font-weight: var(--font-regular);
   }
 
@@ -138,7 +139,9 @@ const sortedProjects = projects.sort((a, b) => {
     padding: var(--spacing-24);
   }
 
-  .projects__content h5 {
+  .projects__content h2 {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
     margin-bottom: var(--spacing-12);
   }
 
@@ -164,6 +167,16 @@ const sortedProjects = projects.sort((a, b) => {
 
   /* Desktop */
   @media (min-width: 1024px) {
+    .projects__intro h1 {
+      font-size: 2.25rem;
+      line-height: 2.75rem;
+    }
+
+    .projects__content h2 {
+      font-size: 1.5rem;
+      line-height: 2rem;
+    }
+
     .projects__header {
       flex-direction: row;
       justify-content: space-between;
