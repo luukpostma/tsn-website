@@ -1,9 +1,9 @@
 ---
-title: "Project titel 1"
+title: "Binnenkozijnen"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas elit arcu, dictum."
-category: "Onderwerp"
-date: "13-11-2025"
-image: "/images/project-placeholder.webp"
+category: "Kozijnen"
+date: "02-09-2025"
+image: "/images/biko.webp"
 location: "Sint Nicolaasga"
 client: "Timmerfabriek Sint Nyk"
 ---

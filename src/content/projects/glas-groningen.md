@@ -1,10 +1,10 @@
 ---
-title: "Project titel 3"
+title: "Glas plaatsing"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas elit arcu, dictum."
-category: "Onderwerp"
+category: "Glas"
 date: "11-11-2025"
-image: "/images/project-placeholder.webp"
-location: "Sint Nicolaasga"
+image: "/images/glas-plaatsing.webp"
+location: "Groningen"
 client: "Timmerfabriek Sint Nyk"
 ---
 
