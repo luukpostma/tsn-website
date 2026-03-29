@@ -25,7 +25,7 @@ const latestProjects = projects.slice(0, 3);
     </div>
 
     <div class="projects__grid">
-      {latestProjects.map((project: { id: string; data: { image: string | null | undefined; title: unknown; description: unknown; category: unknown; date: unknown; }; }) => (
+      {latestProjects.map((project) => (
         <a href={`/projecten/${project.id.replace('.md', '')}`} class="projects__card">
           <div class="projects__image">
             <img src={project.data.image} alt={String(project.data.title)} loading="lazy" />
